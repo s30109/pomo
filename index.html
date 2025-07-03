@@ -110,14 +110,28 @@
 <li>zapewnia najbardziej podstawowe klasy.</li>
 <li>8. Jakie są różnice między językiem Java i C#, w tym właściwości i</li>
 <li>podstawowe kolekcje?</li>
-<li>• (?)</li>
+<li>• Platforma: Java działa na JVM (Java Virtual Machine), C# na .NET CLR.</li>
+<li>Typowanie: Oba mają silne, statyczne typowanie.</li>
+<li>Właściwości (Properties): Java: brak wbudowanych właściwości, używa się getterów/setterów. C#: właściwości są wbudowane (get; set;).</li>
+<li>Kolekcje: Java: List, Set, Map (np. ArrayList, HashSet, HashMap) z java.util. C#: List, HashSet, Dictionary z System.Collections.Generic.</li>
+<li>Lambdy: Oba wspierają lambdy, ale C# wprowadził je wcześniej.</li>
+<li>GUI: Java: Swing/JavaFX; C#: WPF/WinForms.</li>
 <li>9. Jak wygląda proces kompilacji i uruchomienia aplikacji .NET w</li>
 <li>porównaniu do języka Java?</li>
-<li>• (?)</li>
+<li>Proces kompilacji i uruchomienia: Java Kod źródłowy .java → kompilacja do bytecode .class (Javac). Bytecode uruchamiany przez JVM (java).</li>
+<li>Proces kompilacji i uruchomienia .NET (C#): Kod źródłowy .cs → kompilacja do CIL (Common Intermediate Language) w pliku .dll lub .exe CIL uruchamiany przez CLR (Common Language Runtime), który kompiluje go Just-In-Time (JIT) do kodu maszynowego.</li>
+<li>Różnice: Java: jeden JVM dla wszystkich platform.  .NET: dawniej Windows, teraz dzięki .NET Core/.NET 5+ działa wieloplatformowo.  W .NET możliwa kompilacja AOT (Ahead-of-Time).</li>
 <li>10. W jaki sposób oceniamy i porównujemy algorytmy?</li>
 <li>• ‘Trójkąt’ Complexity, Memory, Maintenance</li>
 <li>11. Jakie są miary związane z jakością kodu?</li>
-<li>• (?)</li>
+<li>Czytelność (Readability) – jak łatwo kod zrozumieć.</li>
+<li>Złożoność cyklomatyczna – liczba niezależnych ścieżek w kodzie (niższa = lepsza).</li>
+<li>Pokrycie testami (Test Coverage) – procent kodu objętego testami.</li>
+<li>Powtarzalność (Duplication) – ilość zduplikowanego kodu.</li>
+<li>Zgodność ze standardami – np. zgodność ze stylem kodowania.</li>
+<li>Spójność (Consistency) – jednolite nazewnictwo, styl, struktura.</li>
+<li>Coupling & Cohesion – niski coupling (luźne powiązania), wysoka cohesion (spójność modułu).</li>
+<li>Liczba błędów i ostrzeżeń – im mniej, tym lepiej.</li>
 <li>12. Czym jest kohezja i coupling?</li>
 <li>• Kohezja – odnosi się do tego, w jakim stopniu moduły powinny być zawarte w</li>
 <li>tym samym module. Innymi słowy, jest to miara tego, jak bardzo części kodu</li>
