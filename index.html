@@ -1,0 +1,711 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<title>pomo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 15px;
+    line-height: 1.5;
+    background: #f9f9f9;
+    color: #222;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .question {
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 5px;
+  }
+  .answers {
+    margin-left: 20px;
+    list-style-type: disc;
+    padding-left: 15px;
+  }
+  .answers li {
+    margin-bottom: 3px;
+  }
+  hr {
+    margin: 30px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+</style>
+</head>
+<body>
+<h1>pomo</h1>
+<div class="question"></div>
+<ul class="answers">
+<li>1. Jakie są cechy systemu Git?</li>
+<li>• Wydajny</li>
+<li>• Supportuje złożone modele rozgałęzień</li>
+<li>2. Jakie są cechy systemów kontroli wersji?</li>
+<li>• Wytrzymałość – rozproszony charakter oznacza, że nie ma pojedynczego</li>
+<li>punktu awarii.</li>
+<li>• Elastyczność – programiści mogą pracować niezależnie nad swoim lokalnym</li>
+<li>repozytorium ze wszystkimi dostępnymi funkcjami kontroli wersji, a następnie</li>
+<li>zsynchronizować zmiany w razie potrzeby.</li>
+<li>• Współpraca – DVCS obsługuje różne modele współpracy, od wysoce</li>
+<li>scentralizowanych do całkowicie rozproszonych, umożliwiając zespołom</li>
+<li>wybór na trybu pracy, który najlepiej pasuje do ich projektu.</li>
+<li>3. Jakie są różnice między systemem wersjonowania scentralizowanym i</li>
+<li>rozproszonym?</li>
+<li>• CVCS (scentralizowane) – systemy, w których wszystkie pliki</li>
+<li>przechowywane są w systemie centralnym, a pracownicy wchodzą w</li>
+<li>interakcje z tym centralnym repozytorium, żeby sprawdzać pliki, robić zmiany,</li>
+<li>a następnie commitować je do repozytorium.</li>
+<li>✓ Jedno repozytorium</li>
+<li>✓ Kontrola dostępu</li>
+<li>✓ Zależność od sieci</li>
+<li>✓ Łatwa widoczność</li>
+<li>• DVCS (rozproszone) – reprezentują model kontroli wersji, w którym każdy</li>
+<li>uczestnik projektu utrzymuje osobistą kopie całego repozytorium, w tym jego</li>
+<li>pełną historię.</li>
+<li>✓ Każdy użytkownik ma pełną kopię repozytorium</li>
+<li>✓ Udostępnianie peer-to-peer</li>
+<li>✓ Zwiększona redundancja</li>
+<li>✓ Lepsza obsługa branchowania i mergeowania</li>
+<li>✓ Zwiększona wydajność</li>
+<li>✓ Kontrola dostępu</li>
+<li>4. Czym jest "staging area" vs "working area/working tree"?</li>
+<li>• Przepływ pracy z Git:</li>
+<li>1. Modyfikujesz pliki w working tree.</li>
+<li>2. Wybierasz te zmiany, które chcesz, aby były częścią następnego commita.</li>
+<li>Są dodawane do staging area.</li>
+<li>3. Wykonujesz commit, który pobiera pliki znajdującie się w staging area i</li>
+<li>zapisuje snapshota na stałe w katalogu Git.</li>
+<li>5. Komendy:</li>
+<li>• git commit – zapisuje zmiany w lokanym repozytorium.</li>
+<li>• git status – wyświetlanie stanu working directory oraz staging area. Pokazuje</li>
+<li>zmiany, które zostały zainscenizowane (za pomocą git add ), zmiany, które nie</li>
+<li>są jeszcze zainscenizowane, a także pliki, które nie są śledzone przez Git.</li>
+<li>• git add – dodaje zmiany ze wszystkich plików w bieżącym katalogu (i jego</li>
+<li>podkatalogów) do staging area, przygotowując je do uwzględnienia w</li>
+<li>następnym commitcie.</li>
+<li>• git push – wysyła zmiany na serwer</li>
+<li>6. Czym jest gałąź ( branch ) w Git?</li>
+<li>• Branch -referencja do commita. Posiada dowolną nazwę</li>
+<li>7. Jakie są elementy ekosystemu .NET?</li>
+<li>• Common Type System (CTS) – definiuje wszystkie możliwe typy danych i</li>
+<li>konstrukcje programistyczne obsługiwane przez środowisko</li>
+<li>uruchomieniowe. Zapewnia on, że obiekty napisane w różnych językach .NET</li>
+<li>mogą ze sobą współdziałać.</li>
+<li>• Common Language Runtime (CLR) – zapewnia usługi, takie jak: zarządzanie</li>
+<li>pamięcią, bezpieczeństwo typów, obsługa wyjątków i inne.</li>
+<li>• Framework Class Library (FCL) – duża kolekcja klas wielokrotnego użytku,</li>
+<li>interfejsów i typów wartości, z których mogą korzystać aplikacje do typowych</li>
+<li>operacji, takich jak I/O, wątkowanie, kolekcje i inne.</li>
+<li>• Metadane i założenia – .NET używa założeń jako elementów składowych</li>
+<li>aplikacji, które zawierają metadane dotyczące typów zdefiniowanych w</li>
+<li>programie, w tym ich definicje i implementacje. Metadane zapewniają, że</li>
+<li>informacje o każdym typie i elemencie członkowskim są dostępne w czasie</li>
+<li>wykonywania.</li>
+<li>• Biblioteka Klas Bazowych (BCL) – część większej biblioteki FCL. BCL</li>
+<li>zapewnia najbardziej podstawowe klasy.</li>
+<li>8. Jakie są różnice między językiem Java i C#, w tym właściwości i</li>
+<li>podstawowe kolekcje?</li>
+<li>• (?)</li>
+<li>9. Jak wygląda proces kompilacji i uruchomienia aplikacji .NET w</li>
+<li>porównaniu do języka Java?</li>
+<li>• (?)</li>
+<li>10. W jaki sposób oceniamy i porównujemy algorytmy?</li>
+<li>• ‘Trójkąt’ Complexity, Memory, Maintenance</li>
+<li>11. Jakie są miary związane z jakością kodu?</li>
+<li>• (?)</li>
+<li>12. Czym jest kohezja i coupling?</li>
+<li>• Kohezja – odnosi się do tego, w jakim stopniu moduły powinny być zawarte w</li>
+<li>tym samym module. Innymi słowy, jest to miara tego, jak bardzo części kodu</li>
+<li>są powiązane ze sobą nawzajem.</li>
+<li>• Coupling – odnosi się do tego, jak wiele jeden moduł (np. klasa, funkcja)</li>
+<li>wie/zależy od innego modułu.</li>
+<li>13. Czym jest miara abstrakcji?</li>
+<li>• Miara abstrakcji – stosunek artefaktów abstrakcyjnych (abstrakcyjnych klas,</li>
+<li>interfejsów itd.) do artefaktów konkretnych.</li>
+<li>14. Czym jest pojęcie "connascence"?</li>
+<li>• Connascence – powiązanie.</li>
+<li>• Dwa komponenty są ze sobą powiązane, jeśli zmiana w jednym z nich</li>
+<li>wymagałaby modyfikacji drugiego, w celu utrzymania ogólnej poprawności</li>
+<li>systemu.</li>
+<li>15. Co oznacza skrót DRY?</li>
+<li>• Don't Repeat Yourself</li>
+<li>16. Co oznacza skrót YAGNI?</li>
+<li>• You Aren't Gonna Need It</li>
+<li>17. Co oznacza akronim SOLID? Wyjaśnij każdą z jego składowych.</li>
+<li>• Pięć reguł dotyczących programowania obiektowego</li>
+<li>1. S = Single Responsibility - zasada pojedynczej odpowiedzialności</li>
+<li>2. O = Open-Closed Principle- zasada otwarte-zamknięte</li>
+<li>3. L = Liskov Substitution Principle – zasada podstawienia Liskov</li>
+<li>4. I = Interface Segregation Principle – zasada segregacji interfejsów</li>
+<li>5. D –Dependency Inversion Principle – zasada odwrócenia zależności</li>
+<li>18. Czym jest piramida testów</li>
+<li>• / Testy akceptacyjne \</li>
+<li>• / Testy systemowe \</li>
+<li>• / Testy integracyjne \</li>
+<li>• / Unit testy \</li>
+<li>19. Czym są testy jednostkowe?</li>
+<li>• Automatyczne testy weryfikujące najmniejsze części systemu</li>
+<li>oprogramowania w izolacji. Ich celem jest zapewnienie, że każda jednostka</li>
+<li>działa zgodnie z założeniami. Są pisane przez programistów i często</li>
+<li>wykonywane w trakcie rozwoju, aby wcześnie wykrywać błędy i zapewniać</li>
+<li>stabilność funkcjonalności</li>
+<li>20. Czym są testy end-to-end (e2e)?</li>
+<li>• Testują pełną funkcjonalność systemu od początku do końca, obejmując</li>
+<li>wszystkie jego komponenty</li>
+<li>21. Czym są testy biało skrzynkowe?</li>
+<li>• Testy, w których tester ma dostęp do wewnętrznej struktury i kodu</li>
+<li>testowanego systemu.</li>
+<li>22. Czym są testy czarno skrzynkowe?</li>
+<li>• Testy, w których tester nie ma dostępu do wewnętrznej struktury systemu,</li>
+<li>skupiając się tylko na wejściach i wyjściach.</li>
+<li>23. Czym jest metoda AAA (Arrange-Act-Assert) pisania testów?</li>
+<li>• Sposób pisania testów, gdzie najpierw ustala się warunki testu (Arrange),</li>
+<li>następnie wykonuje akcję (Act), a na końcu sprawdza wynik (Assert).</li>
+<li>24. Jakie są praktyki związane z nazewnictwem testów?</li>
+<li>• MethodName_StateUnderTest_ExpectedBehavior: Ta strategia polega na</li>
+<li>rozpoczęciu nazwy od nazwy testowanej metody, następnie określeniu stanu</li>
+<li>lub warunku, w którym jest testowana, a na końcu oczekiwanego zachowania</li>
+<li>lub wyniku. Ułatwia to zrozumienie, co dokładnie jest testowane i w jakich</li>
+<li>okolicznościach.</li>
+<li>• MethodName_WhenStateUnderTest_ShouldExpectedBehavior: Ta</li>
+<li>strategia wprowadza słowo "should" do nazwy testu, co pozwala naturalnie i</li>
+<li>jasno określić, jakie zachowanie lub wynik jest oczekiwany pod określonymi</li>
+<li>warunkami.</li>
+<li>25. Czym są wyrażenia lambda?</li>
+<li>• Zwięzły sposób reprezentowania anonimowych metod (metody bez nazw) lub</li>
+<li>wyrażeń.</li>
+<li>26. Czym są delegaty?</li>
+<li>• Typ reprezentujący odwołania do metod z określoną listą parametrów i</li>
+<li>zwracanym typem</li>
+<li>27. Czym są klasy Action i Func ?</li>
+<li>• Action – typ delegaty, używany do reprezentowania metody, która ma typ –</li>
+<li>void i może przyjąć 0 lub więcej argumentów.</li>
+<li>• Func – typ delegaty, używany do reprezentowania metody, która zwraca</li>
+<li>wartość i może przyjąć 0 lub więcej parametrów.</li>
+<li>28. Jakie są cechy architektury REST?</li>
+<li>• Koncept – styl architektoniczny do projektowania aplikacji sieciowych, w</li>
+<li>którym usługi sieciowe są postrzegane jako zasoby i mogą być identyfikowane</li>
+<li>przed ich adresy URL.</li>
+<li>• Kluczowe cechy – wykorzystuje standardowe metody HTTP (GET, POST, PUT,</li>
+<li>DELETE), jest lekki (nie wymaga rozbudowanego przetwarzania jak SOAP) i</li>
+<li>bezstanowy.</li>
+<li>• Zastosowanie – Idealny do API webowych używanych przez aplikacje</li>
+<li>mobilne, webowe i inne aplikacje klienckie, które wymagają efektywnej,</li>
+<li>bezstanowej komunikacji.</li>
+<li>29. W jaki sposób ASP.NET przetwarza żądania HTTP?</li>
+<li>• Przetwarza żądania HTTP wykorzystując wzorce:</li>
+<li>1. Model-View-Controller (MVC) - umożliwia oddzielenie logiki biznesowej</li>
+<li>od prezentacji, co ułatwia zarządzanie i testowanie aplikacji,</li>
+<li>2. Web API - wspiera tworzenie usług RESTful dla aplikacji webowych i</li>
+<li>mobilnych,</li>
+<li>3. SignalR - obsługuje funkcjonalność w czasie rzeczywistym, umożliwiając</li>
+<li>serwerowi przesyłanie treści do klientów natychmiast po ich dostępności,</li>
+<li>4. Razor Pages - oferują prostszą składnię do łączenia kodu serwera z HTML,</li>
+<li>5. Entity Framework - upraszcza dostęp do danych, umożliwiając pracę z</li>
+<li>danymi jako silnie typowanymi obiektami.</li>
+<li>30. Jak projektować końcówki zgodne z architekturą REST?</li>
+<li>• Należy:</li>
+<li>1. Używać rzeczowników zamiast czasowników w ścieżkach końcówek.</li>
+<li>2. Nazwy kolekcji powinny być w liczbie mnogiej.</li>
+<li>3. Zagnieżdżać zasoby dla obiektów hierarchicznych.</li>
+<li>4. Obsługiwać błędy w sposób elegancki i zwracać standardowe kody</li>
+<li>błędów.</li>
+<li>5. Pozwalać na filtrowanie, sortowanie i paginację.</li>
+<li>31. Jakie są metody HTTP?</li>
+<li>• GET - żąda danych z zasobu i nie powinno powodować żadnych skutków</li>
+<li>ubocznych.</li>
+<li>• POST - żąda od serwera utworzenia zasobu w bazie danych, zazwyczaj przy</li>
+<li>przesyłaniu formularza.</li>
+<li>• PUT - żąda od serwera zaktualizowania zasobu lub jego utworzenia, jeśli nie</li>
+<li>istnieje.</li>
+<li>• DELETE - Żąda usunięcia zasobu z bazy danych.</li>
+<li>32. Co oznacza rutowanie?</li>
+<li>• Routowanie atrybutów w C# ASP.NET Core umożliwia określanie tras</li>
+<li>bezpośrednio w kontrolerach i akcjach za pomocą atrybutów.</li>
+<li>33. Co oznacza cecha "content negotiation" w architekturze REST?</li>
+<li>• Proces, w którym klient i serwer ustalają najbardziej odpowiednią formę</li>
+<li>reprezentacji zasobów na podstawie nagłówków http.</li>
+<li>34. Czym jest minimal API?</li>
+<li>• Interfejsy w ASP.NET Core zapewniają usprawnione podejście do budowania</li>
+<li>interfejsów API HTTP z mniejszą ilością standardowego kodu w porównaniu</li>
+<li>do tradycyjnych kontrolerów MVC.</li>
+<li>35. W jaki sposób przekazywać dane do serwera w architekturze REST?</li>
+<li>• W architekturze REST dane do serwera można przekazywać na trzy sposoby:</li>
+<li>1. Segment URL - używane do identyfikowania specyficznych zasobów.</li>
+<li>2. Ciało żądania (Request body) - używane do przesyłania danych, głównie</li>
+<li>z żądaniami POST i PUT do tworzenia lub aktualizacji zasobów.</li>
+<li>3. Ciąg zapytania (Query string) - dodawany do URL i używany do</li>
+<li>filtrowania danych lub przekazywania opcjonalnych parametrów.</li>
+<li>36. Jakie są inne podejścia do budowy aplikacji webowych niż REST?</li>
+<li>• RPC</li>
+<li>• CORBA</li>
+<li>• SOAP</li>
+<li>• GraphQL</li>
+<li>37. Czym są metody rozszerzeń?</li>
+<li>• W języku C# metoda rozszerzenia jest specjalnym rodzajem metody</li>
+<li>statycznej zdefiniowanej w statycznej klasie, która umożliwia "rozszerzenie"</li>
+<li>istniejącego typu o nowe metody bez modyfikowania kodu źródłowego</li>
+<li>oryginalnego typu lub korzystania z dziedziczenia</li>
+<li>38. Jak samodzielnie stworzyć metodę rozszerzeń?</li>
+<li>• Aby stworzyć metodę rozszerzeń, należy:</li>
+<li>1. Zdefiniować statyczną klasę.</li>
+<li>2. Utworzyć w niej statyczną metodę, której pierwszy parametr jest</li>
+<li>poprzedzony słowem kluczowym this, co wskazuje na typ, który ma być</li>
+<li>rozszerzony.</li>
+<li>39. Czym różni się podejście deklaratywne od imperatywnego pod kątem kodu?</li>
+<li>• Podejście deklaratywne używa atrybutów do definiowania reguł bez</li>
+<li>konieczności pisania kodu logicznego, np. atrybuty walidacyjne w modelach.</li>
+<li>• Podejście imperatywne polega na pisaniu kodu, który explicite sprawdza</li>
+<li>warunki.</li>
+<li>40. W jaki sposób przeprowadzić deklaratywną walidację w kodzie?</li>
+<li>• Deklaratywna walidacja jest przeprowadzana przez dodanie atrybutów</li>
+<li>walidacyjnych do właściwości modelu, np. [Required], [StringLength(100,</li>
+<li>MinimumLength = 3)], [Range(0.01, 10000.00)].</li>
+<li>41. Czym jest kontener IoC (Inversion of Control)?</li>
+<li>• Wzorzec projektowy, który odwraca tradycyjny przepływ sterowania poprzez</li>
+<li>delegowanie odpowiedzialności za tworzenie instancji obiektów do</li>
+<li>kontenera. Ułatwia to wstrzykiwanie zależności i zwiększa testowalność kodu.</li>
+<li>42. Za co odpowiadają metody AddSingleton() , AddScoped() i AddTransient() w</li>
+<li>kontekście IoC? Czym się różnią?</li>
+<li>• AddSingleton() - tworzy jedną instancję usługi na całe życie aplikacji.</li>
+<li>• AddScoped() - tworzy nową instancję usługi na każdy żądanie.</li>
+<li>• AddTransient() -tworzy nową instancję usługi za każdym razem, gdy jest ona</li>
+<li>żądana.</li>
+<li>43. Czym jest cykl życia zależności zarejestrowanej w kontenerze IoC?</li>
+<li>• Cykl życia zależności odnosi się do okresu, przez który instancja usługi jest</li>
+<li>przechowywana przez kontener IoC: może to być jednorazowe, per żądanie</li>
+<li>lub na czas życia aplikacji (Singleton)</li>
+<li>44. Czym się różni podejście architektoniczne "horizontal slice" od "vertical slice"?</li>
+<li>• Horizontal slice - aplikacja jest podzielona na warstwy (np. UI, logika</li>
+<li>biznesowa, dostęp do danych).</li>
+<li>• Vertical slice - aplikacja jest podzielona na funkcjonalne segmenty, gdzie</li>
+<li>każdy segment zawiera wszystko, co jest potrzebne do obsługi konkretnej</li>
+<li>funkcji, od UI po dostęp do danych.</li>
+<li>45. Czym są repozytoria i dlaczego je wykorzystujemy?</li>
+<li>• Repozytorium to wzorzec projektowy oddzielający logikę biznesową od logiki</li>
+<li>dostępu do danych, co ułatwia zarządzanie kodem i testowanie.</li>
+<li>46. Jakie są wady i zalety korzystania z SqlConnection i SqlCommand w porównaniu</li>
+<li>z użyciem EF (Entity Framework)?</li>
+<li>• Zalety:</li>
+<li>1. Bezpośrednia kontrola nad zapytaniami</li>
+<li>2. Lepsza wydajność.</li>
+<li>• Wady:</li>
+<li>1. Większa złożoność kodu.</li>
+<li>2. Trudniejsza obsługa transakcji i zarządzanie połączeniami.</li>
+<li>47. Jakie są dobre praktyki związane z wykorzystywaniem SqlConnection i</li>
+<li>SqlCommand ?</li>
+<li>• Używanie using do zarządzania zasobami,</li>
+<li>• Korzystanie z parametrów zapytań w celu zapobiegania atakom SQL Injection,</li>
+<li>• Unikanie twardego kodowania połączeń.</li>
+<li>48. Czym jest atak SQL Injection i jak się przed nim zabezpieczyć?</li>
+<li>• SQL Injection to atak polegający na wstrzyknięciu złośliwego kodu SQL do</li>
+<li>zapytania.</li>
+<li>• Zabezpieczenie polega na używaniu parametrów zapytań i procedur</li>
+<li>składowanych.</li>
+<li>49. W jaki sposób możemy oddzielić logikę biznesową od reszty kodu?</li>
+<li>• Można to osiągnąć poprzez wzorce takie jak warstwa serwisowa (Service</li>
+<li>Layer) i repozytoria.</li>
+<li>50. Jaka jest różnica między DAL (Data Access Layer) a BAL (Business Access Layer)?</li>
+<li>• DAL: Warstwa odpowiedzialna za bezpośrednią interakcję z bazą danych.</li>
+<li>• BAL: Warstwa zawierająca logikę biznesową, która wykorzystuje DAL do</li>
+<li>wykonywania operacji na danych.</li>
+<li>51. Czym jest programowanie równoległe?</li>
+<li>• Polega na wykonywaniu wielu zadań jednocześnie, wykorzystując</li>
+<li>wielordzeniowe procesory w celu poprawy wydajności.</li>
+<li>52. Czym jest programowanie asynchroniczne?</li>
+<li>• Pozwala na wykonywanie długotrwałych zadań bez blokowania głównego</li>
+<li>wątku, co utrzymuje aplikację responsywną.</li>
+<li>53. Jakie są wady i zalety programowania asynchronicznego?</li>
+<li>• Zalety:</li>
+<li>1. Zwiększa responsywność aplikacji,</li>
+<li>2. Pozwala na lepszą obsługę wielu żądań jednocześnie.</li>
+<li>• Wady:</li>
+<li>1. Może być trudniejsze do debugowania i zarządzania,</li>
+<li>2. Wymaga zmiany podejścia do pisania kodu.</li>
+<li>54. Czym jest proces?</li>
+<li>• Instancja programu działająca w odizolowanej przestrzeni pamięci,</li>
+<li>posiadająca własne zmienne i zasoby systemowe.</li>
+<li>55. Czym jest wątek?</li>
+<li>• Najmniejsza jednostka przetwarzania, którą zarządza system operacyjny,</li>
+<li>działająca wewnątrz procesu i dzieląca jego zasoby.</li>
+<li>56. Jakie są różnice, wady i zalety między procesami a wątkami?</li>
+<li>• Różnice:</li>
+<li>1. Procesy są bardziej izolowane,</li>
+<li>2. Wątki współdzielą pamięć procesu.</li>
+<li>• Wady i zalety procesów: Lepsza izolacja, ale większy narzut zasobów.</li>
+<li>• Wady i zalety wątków: Mniejsze zużycie zasobów, ale ryzyko problemów z</li>
+<li>współdzieleniem pamięci.</li>
+<li>57. Czym są operacje "CPU bound" i "IO bound"?</li>
+<li>• Operacje "CPU bound" to te, które głównie wykorzystują CPU do</li>
+<li>wykonywania obliczeń.</li>
+<li>• Operacje "IO bound" to te, które głównie czekają na operacje wejścia/wyjścia,</li>
+<li>takie jak dostęp do dysku lub sieci.</li>
+<li>58. Czym są operacje I/O?</li>
+<li>• Działania związane z wejściem (input) i wyjściem (output) danych, np.</li>
+<li>odczyt/zapis do plików, komunikacja sieciowa.</li>
+<li>59. Jak ręcznie tworzyć wątek?</li>
+<li>• Wątek można stworzyć ręcznie w C# za pomocą klasy Thread:</li>
+<li>Thread thread = new Thread(new ThreadStart(MethodName));</li>
+<li>60. Jakie są wady i zalety ręcznego zarządzania wątkami?</li>
+<li>• Zalety:</li>
+<li>1. Pełna kontrola nad wątkami.</li>
+<li>• Wady:</li>
+<li>1. Większa złożoność, trudność w zarządzaniu synchronizacją i unikaniem</li>
+<li>problemów takich jak warunki wyścigu.</li>
+<li>61. Dlaczego programowanie asynchroniczne jest ważne w kontekście aplikacji</li>
+<li>webowych</li>
+<li>• Poprawia skalowalność i responsywność aplikacji webowych, umożliwiając</li>
+<li>lepszą obsługę wielu żądań jednocześnie.</li>
+<li>62. Czym jest Task?</li>
+<li>• Reprezentacja operacji, która może być wykonywana asynchronicznie i może</li>
+<li>zwracać wartość po zakończeniu.</li>
+<li>63. Czym jest pula wątków ( thread pool )?</li>
+<li>• Kolekcja pre-inicjowanych wątków, które są zarządzane i wykorzystywane do</li>
+<li>wykonywania zadań, minimalizując narzut związany z tworzeniem nowych</li>
+<li>wątków.</li>
+<li>64. Do czego służą słowa kluczowe await i async ?</li>
+<li>• async oznacza, że metoda jest asynchroniczna</li>
+<li>• await wstrzymuje wykonanie metody do momentu zakończenia zadania</li>
+<li>asynchronicznego.</li>
+<li>65. Czym jest transakcja?</li>
+<li>• Sekwencja operacji wykonywana jako jedna jednostka logiczna.</li>
+<li>66. Jak korzystać z klas SqlConnection i SqlCommand ?</li>
+<li>using var con = new SqlConnection(connectionString);</li>
+<li>con.Open();</li>
+<li>using var com = new SqlCommand("SELECT * FROM Table", con);</li>
+<li>using var reader = com.ExecuteReader();</li>
+<li>while (reader.Read()) {</li>
+<li>// Przetwarzanie wyników</li>
+<li>}</li>
+<li>67. Czym są typy anonimowe?</li>
+<li>• Typy anonimowe pozwalają na wygodne kapsułkowanie zestawu właściwości</li>
+<li>w jeden obiekt bez konieczności jawnego definiowania typu. Używane są</li>
+<li>często w zapytaniach LINQ, gdzie wynik jest podzbiorem właściwości</li>
+<li>obiektów będących przedmiotem zapytania.</li>
+<li>68. Czym jest język LINQ?</li>
+<li>• Language Integrated Query to zestaw technologii wprowadzony w .NET</li>
+<li>Framework 3.5, który dodaje natywne możliwości zapytań do języków .NET,</li>
+<li>takich jak C#. Pozwala na pisanie zapytań bezpośrednio w języku C#.</li>
+<li>69. Czym jest składnia query syntax w języku LINQ?</li>
+<li>• Składnia query syntax w LINQ jest podobna do SQL i używa operatorów</li>
+<li>zapytań takich jak from, select, where, join, group i orderby, aby tworzyć</li>
+<li>zapytania.</li>
+<li>70. Czym jest składnia z wyrażeniami lambda w języku LINQ?</li>
+<li>• Składnia z wyrażeniami lambda w LINQ używa metod rozszerzeń z przestrzeni</li>
+<li>nazw System.Linq takich jak Where, Select, OrderBy, Join, GroupBy i może</li>
+<li>być łączona, aby tworzyć złożone zapytania.</li>
+<li>71. Jakie są wady i zalety korzystania z składni query syntax vs lambda syntax w</li>
+<li>LINQ?</li>
+<li>• Zalety query syntax:</li>
+<li>1. Bardziej zwięzła dla złożonych zapytań,</li>
+<li>2. Podobna do SQL,</li>
+<li>3. Łatwiejsza dla osób znających SQL.</li>
+<li>• Zalety lambda syntax:</li>
+<li>1. Większa elastyczność,</li>
+<li>2. Łatwiejsza do dynamicznego budowania zapytań</li>
+<li>• Wady query syntax</li>
+<li>1. Może być mniej intuicyjna dla prostych zapytań.</li>
+<li>• Wady lambda syntax:</li>
+<li>1. Może być mniej czytelna dla złożonych zapytań.</li>
+<li>72. Jakie są wady i zalety korzystania z SqlConnection vs ORM (Object-Relational</li>
+<li>Mapping) takiego jak EF?</li>
+<li>• Zalety SqlConnection: Bezpośrednia kontrola nad zapytaniami SQL, lepsza</li>
+<li>wydajność dla skomplikowanych zapytań.</li>
+<li>• Wady SqlConnection: Większa ilość kodu, trudniejsze zarządzanie</li>
+<li>transakcjami i połączeniami.</li>
+<li>• Zalety ORM: Automatyczne mapowanie obiektów do tabel, redukcja kodu,</li>
+<li>łatwiejsze zarządzanie relacjami i transakcjami.</li>
+<li>• Wady ORM: Może generować mniej wydajne zapytania, trudniejsze do</li>
+<li>optymalizacji dla zaawansowanych przypadków użycia. Czym jest podejście</li>
+<li>"code first" w EF?</li>
+<li>73. Czym jest podejście "code first" w EF?</li>
+<li>• Podejście "code first" w Entity Framework polega na tworzeniu i definiowaniu</li>
+<li>klas encji oraz relacji w kodzie aplikacji, z których następnie generowana jest</li>
+<li>schemat bazy danych przy użyciu migracji.</li>
+<li>74. Czym jest podejście "database first" w EF?</li>
+<li>• Podejście "database first" w Entity Framework polega na tym, że schemat</li>
+<li>bazy danych jest tworzony niezależnie od kodu aplikacji, a następnie EF</li>
+<li>generuje klasy encji i DbContext na podstawie istniejącego schematu bazy</li>
+<li>danych.</li>
+<li>75. Kiedy stosujemy podejście "code first" vs "database first"?</li>
+<li>• "Code first": Nowe projekty, szybki rozwój, iteracyjne zmiany, zespoły</li>
+<li>programistyczne.</li>
+<li>• "Database first": Istniejące bazy danych, złożone schematy, optymalizacja</li>
+<li>bazy danych, zarządzanie przez administratorów baz danych.</li>
+<li>76. Jakie są wady i zalety podejścia "code first" vs "database first"?</li>
+<li>• Zalety "code first": Zwinność, kontrola wersji, szybki rozwój.</li>
+<li>• Wady "code first": Mniejsza kontrola nad projektem bazy danych, wymaga</li>
+<li>znajomości EF migracji.</li>
+<li>• Zalety "database first": Pełna kontrola nad projektem bazy danych, znajomość</li>
+<li>tradycyjnych metod tworzenia baz danych.</li>
+<li>• Wady "database first": Problemy z synchronizacją kodu z bazą danych, mniej</li>
+<li>zwinne.</li>
+<li>77. Czym jest problem określany jako "lost update"?</li>
+<li>• "Lost update" występuje, gdy dwie transakcje jednocześnie odczytują tę samą</li>
+<li>wartość i obie ją aktualizują, ale ostatnia zapisuje swoje zmiany, nadpisując</li>
+<li>zmiany wprowadzone przez pierwszą transakcję.</li>
+<li>78. Czym jest problem określany jako "inconsistent reads"?</li>
+<li>• "Inconsistent reads" to sytuacja, gdy jedna transakcja czyta dane, które są</li>
+<li>jednocześnie modyfikowane przez inną transakcję, co prowadzi do</li>
+<li>niespójnych wyników w obrębie jednej transakcji.</li>
+<li>79. Czym jest blokowanie optymistyczne?</li>
+<li>• Blokowanie optymistyczne to strategia zarządzania współbieżnością, która</li>
+<li>pozwala na jednoczesne przetwarzanie wielu transakcji bez blokowania</li>
+<li>zasobów, ale sprawdza konflikty przed zatwierdzeniem transakcji.</li>
+<li>80. Jak implementować blokowanie optymistyczne?</li>
+<li>• Implementacja blokowania optymistycznego polega na dodaniu</li>
+<li>identyfikatora wersji (lub znacznika czasu) do danych, odczytaniu go podczas</li>
+<li>rozpoczęcia transakcji, a następnie ponownym odczytaniu i porównaniu</li>
+<li>przed zatwierdzeniem transakcji. Jeśli identyfikator wersji uległ zmianie,</li>
+<li>transakcja jest wycofywana.</li>
+<li>81. Jak działa atrybut ConcurrencyCheck?</li>
+<li>• Atrybut ConcurrencyCheck oznacza właściwość jako token współbieżności,</li>
+<li>co powoduje, że Entity Framework uwzględnia tę właściwość w klauzuli</li>
+<li>WHERE podczas wykonywania operacji UPDATE lub DELETE. Jeśli wartość tej</li>
+<li>właściwości zmieniła się od momentu odczytu danych, EF wyrzuci wyjątek</li>
+<li>DbUpdateConcurrencyException.</li>
+<li>82. Jak działa blokowanie pesymistyczne?</li>
+<li>• Blokowanie pesymistyczne polega na zablokowaniu danych natychmiast po</li>
+<li>ich odczytaniu, co uniemożliwia innym transakcjom modyfikację tych danych,</li>
+<li>dopóki blokada nie zostanie zwolniona. Blokada jest utrzymywana przez cały</li>
+<li>czas trwania transakcji.</li>
+<li>83. Czym jest wzorzec "Big Ball of Mud"?</li>
+<li>• "Big Ball of Mud" to wzorzec architektoniczny, który charakteryzuje się</li>
+<li>chaotyczną, nieprzemyślaną strukturą kodu, w której brakuje jasnego</li>
+<li>podziału na moduły. Kod jest trudny do utrzymania i rozbudowy z powodu</li>
+<li>silnego powiązania i braku organizacji.</li>
+<li>84. Jakie są trzy ogólne zestawy odpowiedzialności, które znajdujemy w każdej</li>
+<li>aplikacji?</li>
+<li>• Zestawy odpowiedzialności to:</li>
+<li>1. Domain (Business Logic) Concerns: Logika biznesowa,</li>
+<li>2. Infrastructure Concerns: Elementy infrastruktury, takie jak</li>
+<li>persystencja danych i komunikacja zewnętrzna.</li>
+<li>3. UI Concerns: Interfejs użytkownika lub API.</li>
+<li>85. Czym jest podejście określane jako "transactional script"?</li>
+<li>• "Transactional script" to wzorzec projektowy organizujący logikę biznesową w</li>
+<li>skrypty transakcyjne, które są prostymi procedurami wykonującymi zadania</li>
+<li>biznesowe bez konieczności stosowania złożonej architektury. Logika</li>
+<li>biznesowa jest oddzielona od innych aspektów aplikacji.</li>
+<li>86. Czym jest model domenowy</li>
+<li>• Model domenowy to koncepcyjna reprezentacja struktur i encji biznesowych</li>
+<li>w aplikacji, abstrahująca rzeczywiste podmioty i ich relacje. Służy do</li>
+<li>skoncentrowania logiki biznesowej w jednym miejscu, ułatwiając jej</li>
+<li>modyfikację i utrzymanie.</li>
+<li>87. Jakie są zalety i wady opisanych podejść?</li>
+<li>• Zalety podejścia "Big Ball of Mud": Szybki start, brak potrzeby planowania.</li>
+<li>• Wady podejścia "Big Ball of Mud": Trudności w utrzymaniu, brak</li>
+<li>skalowalności.</li>
+<li>• Zalety "transactional script": Prostota, łatwe do zrozumienia.</li>
+<li>• Wady "transactional script": Brak elastyczności, trudności w zarządzaniu</li>
+<li>złożoną logiką.</li>
+<li>• Zalety modelu domenowego: Skalowalność, koncentracja logiki biznesowej.</li>
+<li>• Wady modelu domenowego: Wysoka złożoność, duży nakład pracy na</li>
+<li>początkowym etapie.</li>
+<li>88. Czym jest wzorzec Unit of Work?</li>
+<li>• Wzorzec "Unit of Work" zarządza transakcjami w aplikacji, śledząc zmiany w</li>
+<li>obiektach i zapewniając, że wszystkie operacje w ramach jednej transakcji są</li>
+<li>zatwierdzane lub wycofywane razem, co pomaga w zarządzaniu</li>
+<li>współbieżnością i integralnością danych.</li>
+<li>89. Do czego służy CancellationToken?</li>
+<li>• CancellationToken umożliwia zarządzanie anulowaniem długotrwałych zadań</li>
+<li>w sposób kontrolowany i uporządkowany, pozwalając na zakończenie zadań,</li>
+<li>zwolnienie zasobów i poprawę responsywności aplikacji.</li>
+<li>90. Czym jest middleware?</li>
+<li>• Middleware w ASP.NET Core to oprogramowanie złożone w potok aplikacji,</li>
+<li>które obsługuje żądania i odpowiedzi. Każdy komponent w potoku może</li>
+<li>przetwarzać przychodzące żądania i wychodzące odpowiedzi, wykonując</li>
+<li>zadania takie jak uwierzytelnianie, logowanie, routing itp.</li>
+<li>91. Jak dodać własny middleware?</li>
+<li>• Aby dodać własny middleware, należy:</li>
+<li>1. Utworzyć klasę middleware z konstruktorem przyjmującym</li>
+<li>RequestDelegate i metodą Invoke lub InvokeAsync.</li>
+<li>2. Zarejestrować middleware w metodzie Configure klasy</li>
+<li>Startup za pomocą IApplicationBuilder.UseMiddleware<T>.</li>
+<li>92. Jaka jest różnica między uwierzytelnianiem i autoryzacją?</li>
+<li>• Uwierzytelnianie to proces weryfikacji tożsamości użytkownika lub systemu,</li>
+<li>natomiast autoryzacja to proces określania, do jakich zasobów lub działań</li>
+<li>uwierzytelniony użytkownik ma dostęp.</li>
+<li>93. Jak działa uwierzytelnianie w oparciu o bazę danych?</li>
+<li>• Uwierzytelnianie oparte na bazie danych polega na weryfikacji danych</li>
+<li>logowania użytkownika poprzez porównanie z danymi przechowywanymi w</li>
+<li>bazie danych. Zazwyczaj używa się do tego funkcji haszujących, aby</li>
+<li>zabezpieczyć hasła przed kradzieżą.</li>
+<li>94. Jak działa uwierzytelnianie wykorzystujące session ID?</li>
+<li>• W uwierzytelnianiu opartym na session ID, po zalogowaniu użytkownika,</li>
+<li>serwer tworzy sesję i wysyła ID sesji do klienta. Klient przesyła ID sesji w</li>
+<li>kolejnych żądaniach, umożliwiając serwerowi identyfikację użytkownika i</li>
+<li>autoryzację jego działań.</li>
+<li>95. Jak działa uwierzytelnianie wykorzystujące access token (JWT) i refresh token?</li>
+<li>• Uwierzytelnianie z użyciem access token (JWT) i refresh token polega na tym,</li>
+<li>że po zalogowaniu użytkownika serwer generuje krótko-żyjący JWT oraz</li>
+<li>refresh token. JWT jest używany do uwierzytelniania żądań, a refresh token do</li>
+<li>uzyskiwania nowych JWT, gdy obecny token wygaśnie.</li>
+<li>96. Do czego służą access token i refresh token?</li>
+<li>• Access token (JWT) służy do uwierzytelniania użytkownika i autoryzacji jego</li>
+<li>żądań. Refresh token jest używany do uzyskiwania nowych access token, gdy</li>
+<li>obecny wygaśnie, co pozwala na utrzymanie ciągłego dostępu do zasobów</li>
+<li>bez konieczności ponownego logowania użytkownika.</li>
+<li>97. Jakie są wady i zalety tokena JWT?</li>
+<li>• Zalety:</li>
+<li>1. Stateless: Brak potrzeby przechowywania sesji na serwerze.</li>
+<li>2. Interoperacyjność: Szeroko wspierany standard.</li>
+<li>3. Skalowalność: Idealny do systemów rozproszonych.</li>
+<li>4. Wydajność: Brak potrzeby odpytywania bazy danych dla</li>
+<li>każdego żądania.</li>
+<li>• Wady:</li>
+<li>1. Bezpieczeństwo: Dłuższe życie tokenów zwiększa ryzyko</li>
+<li>kradzieży.</li>
+<li>2. Brak centralnego zarządzania sesją: Trudności w</li>
+<li>unieważnianiu tokenów bez dodatkowej logiki.</li>
+<li>98. Czym się różni szyfrowanie od kodowania?</li>
+<li>• Kodowanie przekształca dane na inny format przy użyciu publicznie</li>
+<li>dostępnego schematu w celu ich łatwej konsumpcji przez różne systemy.</li>
+<li>• Szyfrowanie przekształca dane w nieczytelny format przy użyciu</li>
+<li>specyficznego algorytmu i klucza, aby zabezpieczyć dane przed</li>
+<li>nieautoryzowanym dostępem.</li>
+<li>99. Z czego składa się JWT?</li>
+<li>• JWT składa się z trzech części:</li>
+<li>1. Header: Metadane tokenu, takie jak typ tokenu (JWT) i</li>
+<li>używany algorytm podpisu.</li>
+<li>2. Payload: Zawiera twierdzenia (claims) na temat encji</li>
+<li>(zazwyczaj użytkownika).</li>
+<li>3. Signature: Służy do weryfikacji integralności tokenu i</li>
+<li>autentyczności danych w nim zawartych.</li>
+<li>100. Czym są obiekty DTO (Data Transfer Object)?</li>
+<li>• DTO (Data Transfer Object) to obiekty używane do przenoszenia danych</li>
+<li>między różnymi warstwami aplikacji, minimalizując ilość połączeń</li>
+<li>sieciowych. DTO zazwyczaj zawiera tylko dane i nie zawiera logiki biznesowej.</li>
+<li>101. Czym są aplikacje MPA (Multi-Page Application)?</li>
+<li>• MPA (Multi-Page Application) to tradycyjny model aplikacji webowych, w</li>
+<li>którym każda interakcja użytkownika prowadzi do załadowania nowej strony z</li>
+<li>serwera. Przykłady obejmują wiele stron z dynamicznie generowaną</li>
+<li>zawartością, ale wymagających pełnego odświeżenia przeglądarki.</li>
+<li>102. Czym są aplikacje SPA (Single-Page Application)?</li>
+<li>• SPA (Single-Page Application) to aplikacja webowa, która ładuje pojedynczy</li>
+<li>dokument HTML i dynamicznie aktualizuje zawartość w miarę interakcji</li>
+<li>użytkownika, bez konieczności przeładowywania całej strony. Przykłady to</li>
+<li>Gmail czy Google Maps.</li>
+<li>103. Jakie są wady, zalety i różnice między MPA i SPA?</li>
+<li>• MPA:</li>
+<li>• Zalety: Lepsze dla SEO, łatwiejsze do zaimplementowania, idealne dla stron z</li>
+<li>dużą ilością treści.</li>
+<li>• Wady: Wolniejsze interakcje użytkownika, większy narzut na serwer.</li>
+<li>• SPA:</li>
+<li>• Zalety: Lepsze doświadczenie użytkownika, szybsze interakcje po initialnym</li>
+<li>załadowaniu, lepsze dla aplikacji wymagających dużej interaktywności.</li>
+<li>• Wady: Trudniejsze do SEO, większa złożoność i potrzeba zarządzania stanem</li>
+<li>aplikacji.</li>
+<li>104. Czym jest różnica między klientem cienkim a grubym?</li>
+<li>• Klient cienki (thin client) polega głównie na serwerze do przetwarzania danych</li>
+<li>i logiki aplikacji, wysyłając tylko minimalny kod HTML, CSS i JavaScript do</li>
+<li>przeglądarki.</li>
+<li>• Klient gruby (thick client) przenosi większość logiki aplikacji na stronę klienta,</li>
+<li>wykonując więcej operacji w przeglądarce przy użyciu frameworków</li>
+<li>JavaScript jak React czy Angular.</li>
+<li>105. Czym jest ASP.NET MVC?</li>
+<li>• ASP.NET MVC (Model-View-Controller) to framework do budowy aplikacji</li>
+<li>webowych w architekturze MVC, umożliwiający oddzielenie logiki aplikacji,</li>
+<li>warstwy prezentacji i danych, co ułatwia rozwój, testowanie i utrzymanie</li>
+<li>aplikacji.</li>
+<li>106. Czym jest Razor?</li>
+<li>• Razor to silnik widoków używany w ASP.NET do generowania dynamicznego</li>
+<li>HTML. Umożliwia wstawianie C# w kodzie HTML przy użyciu składni @ do</li>
+<li>łatwego łączenia logiki aplikacji z prezentacją.</li>
+<li>107. Jak przekazać dane do widoku?</li>
+<li>• Dane można przekazywać do widoku w ASP.NET używając obiektów ViewBag,</li>
+<li>ViewData lub silnie typowanych modeli. ViewBag i ViewData są dynamiczne,</li>
+<li>podczas gdy silnie typowane modele zapewniają bezpieczeństwo typów i</li>
+<li>lepsze wsparcie dla Intellisense.</li>
+<li>108. Czym jest ViewBag?</li>
+<li>• ViewBag to dynamiczny obiekt, który pozwala na przekazywanie danych z</li>
+<li>kontrolera do widoku bez konieczności używania silnie typowanych modeli.</li>
+<li>Umożliwia łatwe przekazywanie małych ilości danych, ale nie oferuje kontroli</li>
+<li>typów podczas kompilacji.</li>
+<li>109. Czym są widoki silnie typowane?</li>
+<li>• Widoki silnie typowane używają modeli, które są specyficzne dla danego</li>
+<li>widoku, zapewniając bezpieczeństwo typów i lepsze wsparcie dla Intellisense</li>
+<li>w edytorach kodu. Model jest definiowany na początku widoku przy użyciu</li>
+<li>dyrektywy @model.</li>
+<li>110. Jak działa formularz HTML?</li>
+<li>• Formularz HTML umożliwia użytkownikom wprowadzanie danych i przesyłanie</li>
+<li>ich na serwer za pomocą żądania HTTP (zazwyczaj POST lub GET). Dane są</li>
+<li>następnie przetwarzane przez serwer, który może je zapisać, przetworzyć lub</li>
+<li>zwrócić odpowiedź do użytkownika.</li>
+<li>111. Czym się różni walidacja serwerowa od klienta?</li>
+<li>• Walidacja klienta jest wykonywana w przeglądarce użytkownika za pomocą</li>
+<li>JavaScript, zapewniając natychmiastową informację zwrotną. Walidacja</li>
+<li>serwerowa jest wykonywana na serwerze po przesłaniu formularza, co jest</li>
+<li>bardziej bezpieczne, ponieważ nie może być łatwo obejście przez</li>
+<li>użytkownika.</li>
+<li>112. Czym jest WebAssembly?</li>
+<li>• WebAssembly (Wasm) to binarny format instrukcji dla wirtualnej maszyny</li>
+<li>stosowej, który umożliwia uruchamianie kodu na stronach internetowych z</li>
+<li>wydajnością zbliżoną do natywnej. WebAssembly jest zaprojektowany jako</li>
+<li>przenośny cel kompilacji dla języków takich jak C, C++ i Rust, co pozwala na</li>
+<li>uruchamianie kodu w przeglądarkach.</li>
+<li>113. Jakie są wady i zalety WebAssembly?</li>
+<li>• Zalety:</li>
+<li>• Szybkość: Wydajność zbliżona do natywnej.</li>
+<li>• Przenośność: Może być uruchamiany na różnych platformach i</li>
+<li>przeglądarkach.</li>
+<li>• Bezpieczeństwo: Działa w bezpiecznym środowisku sandbox.</li>
+<li>• Wady:</li>
+<li>• Złożoność: Trudniejszy do debugowania w porównaniu do JavaScript.</li>
+<li>• Kompatybilność: Wymaga nowoczesnych przeglądarek i wsparcia dla</li>
+<li>WebAssembly.</li>
+<li>114. Czym jest Blazor?</li>
+<li>• Blazor to framework webowy opracowany przez Microsoft, który umożliwia</li>
+<li>tworzenie interaktywnych interfejsów użytkownika przy użyciu C# i .NET</li>
+<li>zamiast JavaScript. Blazor umożliwia uruchamianie kodu .NET w przeglądarce</li>
+<li>za pomocą WebAssembly, a także oferuje model serwerowy, gdzie interakcje</li>
+<li>są obsługiwane po stronie serwera przez SignalR.</li>
+<li>115. Jaka jest różnica między Blazor Server Side a Blazor Client Side?</li>
+<li>• Blazor Server Side: Logika aplikacji działa na serwerze, a zmiany w interfejsie</li>
+<li>użytkownika są przesyłane do przeglądarki przez SignalR. Wymaga stałego</li>
+<li>połączenia z serwerem.</li>
+<li>• Blazor Client Side (WebAssembly): Aplikacja działa w całości w przeglądarce</li>
+<li>za pomocą WebAssembly. Może działać offline po pobraniu wszystkich</li>
+<li>niezbędnych zasobów.</li>
+<li>116. Czym są testy integracyjne?</li>
+<li>• Testy integracyjne sprawdzają, czy różne komponenty systemu współpracują</li>
+<li>ze sobą zgodnie z oczekiwaniami. Obejmują interakcje między modułami,</li>
+<li>usługami lub warstwami aplikacji, zapewniając, że ich zintegrowane działanie</li>
+<li>spełnia wymagania.</li>
+<li>117. Czym są obiekty testowe?</li>
+<li>• Obiekty testowe to specjalnie przygotowane obiekty używane w testach</li>
+<li>jednostkowych i integracyjnych do symulowania rzeczywistych obiektów.</li>
+<li>Służą do izolowania testowanych jednostek oraz kontrolowania ich</li>
+<li>środowiska testowego.</li>
+<li>118. Czym jest mock?</li>
+<li>• Mock to rodzaj obiektu testowego, który jest używany do weryfikacji interakcji</li>
+<li>między systemem a jego zależnościami. Mocki mogą być zaprogramowane z</li>
+<li>oczekiwaniami dotyczącymi wywołań metod, parametrów i kolejności</li>
+<li>operacji, a następnie rejestrują informacje o tym, jak były używane.</li>
+<li>119. Czym jest spy?</li>
+<li>• Spy to specjalny rodzaj obiektu testowego, który rejestruje interakcje między</li>
+<li>systemem a sobą. W przeciwieństwie do mocków, spie nie są wstępnie</li>
+<li>programowane z oczekiwaniami, ale po prostu rejestrują wywołania metod i</li>
+<li>ich parametry do późniejszej analizy.</li>
+<li>120. Czym jest fake?</li>
+<li>• Fake to testowy zamiennik, który ma działające implementacje, ale są one</li>
+<li>uproszczone lub nieodpowiednie do produkcji. Fakes są używane do</li>
+<li>zastępowania skomplikowanych lub wolnych rzeczywistych komponentów,</li>
+<li>aby przyspieszyć testy.</li>
+<li>121. Czym jest stub?</li>
+<li>• Stub to rodzaj obiektu testowego, który zapewnia predefiniowane odpowiedzi</li>
+<li>na określone wywołania podczas testów. Stubs są używane do symulacji</li>
+<li>komponentów, z którymi testowany moduł wchodzi w interakcje, zapewniając</li>
+<li>kontrolowane i przewidywalne środowisko testowe.</li>
+<li>122. Czym jest dummy?</li>
+<li>• Dummy to rodzaj obiektu testowego, który jest przekazywany, ale nigdy</li>
+<li>faktycznie nie jest używany. Służy do wypełniania list parametrów lub</li>
+<li>spełniania sygnatur metod, umożliwiając uruchomienie testu bez</li>
+<li>implementacji rzeczywistej funkcjonalności, która nie jest istotna dla</li>
+<li>konkretnego testu.</li>
+</ul>
+</body></html>
